@@ -21,8 +21,8 @@ instance Show HandResult where
   show Shark = "Nothing! Your highest rank was: "
 
 groupHand hand =
-    let equal_rank        = (\x y -> value x == value y)
-        groups            = groupBy equal_rank $ sortBy (comparing value) hand in
+    let equal_rank = (\x y -> value x == value y)
+        groups = groupBy equal_rank $ sortBy (comparing value) hand in
         reverse $ sortBy (comparing length) groups
 
 bestHand :: [Card] -> HandResult
